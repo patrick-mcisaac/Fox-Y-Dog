@@ -12,11 +12,12 @@ foxButton.addEventListener("click", () => {
 })
 
 const dogButton = document.querySelector("#dog-button")
-dogButton.addEventListener("click", () => {
-    fetch('https://random.dog/woof.json').then((response) => {
-        return response.json()
-    }).then((dogData) => {
-        const dogImage = document.querySelector('#dog')
-        dogImage.src = dogData.url
-    })
-})
+
+
+const displayDogImage = async () => {
+    const response = await fetch("https://random.dog/woof.json")
+    const dogData = await response.json()
+    const dogImage = document.querySelector('#dog')
+    dogImage.src = dogData.url
+}
+dogButton.addEventListener("click", displayDogImage)
