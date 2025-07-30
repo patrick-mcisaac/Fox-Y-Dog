@@ -20,4 +20,4 @@ const displayDogImage = async () => {
     const dogImage = document.querySelector('#dog')
     dogImage.src = dogData.url
 }
-dogButton.addEventListener("click", displayDogImage)
+dogButton.addEventListener("click", displayDogImage) 
